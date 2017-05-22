@@ -1,0 +1,27 @@
+{
+  "name": "shadycss-issue",
+  "version": "0.0.1",
+  "description": "Reduced Test case for ShadyCSS issue using style placeholders",
+  "license": "UNLICENSED",
+  "author": "Rob Campbell",
+  "config": {
+    "js_main": "main.js"
+  },
+  "scripts": {
+    "start": "cd build/ && python -m SimpleHTTPServer 8080",
+    "build": "npm run js && npm run copy:html && npm run copy:css && npm run copy-polyfills",
+    "js": "mkdirp build/js && npm run -s js-transpile",
+    "js-transpile": "cd src/js && browserify --debug $npm_package_config_js_main > ../../build/js/$npm_package_name.js -t [ babelify --presets [ es2015 ] ]",
+    "copy-polyfills": "cp -r src/js/third_party build/js/third_party",
+    "copy:html": "cp -r src/index.html build/index.html",
+    "copy:css": "cp -r src/css build/css"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "mkdirp": "^0.5.1"
+  }
+}
