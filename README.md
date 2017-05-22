@@ -1,6 +1,6 @@
 ## ShadyCSS issue using style placeholders.
 
-This is a reduced test case for the issue using style placeholders with [shadycss](https://github.com/webcomponents/shadycss) in Chrome version 49.0.2623.112 (64-bit).
+This is a reduced test case for the issue [#99](https://github.com/webcomponents/shadycss/issues/99) using style placeholders with [shadycss](https://github.com/webcomponents/shadycss) in Chrome version 49.0.2623.112 (64-bit).
 
 ### Installing
 
